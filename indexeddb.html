@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TODO List - IndexedDB edition</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato|Playfair+Display" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>TODO List IndexedDB</h1>
+</header>
+
+<div class="container">
+
+    <div class="inputarea">
+        <input type="text" maxlength="120" class="myInput" required>
+        <input type="submit" class="js-submit" value="Add new item">
+        <div class="error error--hidden"></div>
+    </div>
+
+    <ul class="js-ul">
+        <!-- Following line only appears when there are are no items in localstorage -->
+        <div class="box box--hidden"><li>Looks like there are no items here. Why not try adding one?</li></div>
+
+        <template class="js-list-template">
+            <div class="box js-box"><li class="notez"></li>
+                <div class = "buttons js-buttons">
+                    <a href="#" title="Move up" class="upbutton"><i class="fas fa-arrow-up"></i></a>
+                    <a href="#" title="Move down" class="downbutton"><i class="fas fa-arrow-down"></i></a>
+                    <a href="#" title="Delete" class="deletebutton"><i class="fas fa-times"></i></a>
+                </div>
+            </div>
+        </template>
+    </ul>
+</div>
+
+<button class="clearBox">Clear list</button>
+
+ <!-- Modal only appears on delete-->
+ <div class="myModal myModal--hidden">
+    <div class="modalContent">
+        <p>Are you sure you want to delete this item?</p>
+        <p class = "quote"></p>
+        <button class="options ok">OK, delete</button>
+        <button class="options cancel">Cancel, don't delete</button>
+    </div>
+</div>
+
+<script src="scriptSansConsoleLog.js"></script>
+
+<footer><sub>© Digital Design Labs</sub></footer>
+
+</body>
+</html>
